@@ -14,7 +14,7 @@ class ScoreView(View):
             result = data.get('result')
             opponent_name = data.get('opponent_name', None)
             
-            if not game_id or not player_id or result not in ['win', 'lose', 'draw']:
+            if not game_id or not player_id or result not in ['win', 'loss', 'draw']:
                 return JsonResponse({"error": "game_id, player_id, result, are required"}, status=400)
             
             if result == 'win':

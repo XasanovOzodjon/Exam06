@@ -22,5 +22,7 @@ urlpatterns = [
     path('api/', include('apps.games.urls')),
     path('api/', include('apps.players.urls')),
     path('api/', include('apps.scores.urls')),
+    path('api/', include('apps.leaderboard.urls')),
+    
     
 ]

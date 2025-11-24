@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.games.apps.GamesConfig',
     'apps.players.apps.PlayersConfig',
     'apps.scores.apps.ScoresConfig',
+    'apps.leaderboard.apps.LeaderboardConfig',
 ]
 
 MIDDLEWARE = [

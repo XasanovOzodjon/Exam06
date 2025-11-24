@@ -92,10 +92,11 @@ class PlayerDetailView(View):
     def delete(self, request, player_id):
         try:
             player = get_object_or_404(Player, pk=player_id)
-            player.delete()
             scores_count = player.scores.count()
+            
             if scores_count > 0:
                 return JsonResponse({'status': f'Cannot delete player with game history. Player has {scores_count} recorded games.'}, status=400)
+            player.delete()
             return JsonResponse({'status': 'Deleted'}, status=204)
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=404) 

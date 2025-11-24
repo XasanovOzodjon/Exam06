@@ -13,7 +13,7 @@ class Player(models.Model):
             total_games = scores.count()
             wins = scores.filter(result='win').count()
             draws = scores.filter(result='draw').count()
-            losses = scores.filter(result='lose').count()
+            losses = scores.filter(result='loss').count()
         else:
             total_games = 0
             wins = 0

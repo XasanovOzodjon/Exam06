@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 class Scores(models.Model):
-    choise= [
+    choice = [
         ('win', 'Win'),
-        ('lose', 'Lose'),
+        ('loss', 'Loss'),
         ('draw', 'Draw'),
     ]
     game = models.ForeignKey('games.Game', on_delete=models.PROTECT, related_name='game_scores')
     player = models.ForeignKey('players.Player', on_delete=models.PROTECT, related_name='player_scores')
-    result = models.CharField(max_length=10, choices=choise)
+    result = models.CharField(max_length=10, choices=choice)
     points = models.IntegerField()
     opponent_name = models.CharField(max_length=50, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
